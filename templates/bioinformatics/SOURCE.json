@@ -1,0 +1,24 @@
+{
+  "id": "bioinformatics",
+  "name": "Bioinformatics · OUP",
+  "family": "oup",
+  "category": "biology",
+  "aliases": [
+    "Bioinformatics",
+    "ISMB",
+    "ECCB",
+    "生物信息学"
+  ],
+  "year": null,
+  "mode": "Authoring / review",
+  "engine": "pdflatex",
+  "directory": "bioinformatics",
+  "main": "main.tex",
+  "source": "https://mirrors.ctan.org/macros/latex/contrib/oup-authoring-template.zip",
+  "sha256": "025434f53ed3a46b9fd84d50a78c734c309476bc47b1cb7a90c383734df38e97",
+  "license": "LPPL-1.3",
+  "note": "OUP 官方 authoring template。期刊专属摘要结构、参考文献和版式选项须按指南确认；ISMB/ECCB 仅指采用该期刊格式的论文轨道。",
+  "retrievedAt": "2026-11-07",
+  "validation": "compiled-on-windows",
+  "testedAt": "2026-11-06T17:22:24.160Z"
+}

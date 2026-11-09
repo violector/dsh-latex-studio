@@ -1,0 +1,23 @@
+{
+  "id": "cvpr",
+  "name": "CVPR 2027",
+  "family": "cvpr",
+  "category": "computer",
+  "aliases": [
+    "CVPR",
+    "computer vision",
+    "计算机视觉"
+  ],
+  "year": 2027,
+  "mode": "Authoring / review",
+  "engine": "pdflatex",
+  "directory": "cvpr",
+  "main": "main.tex",
+  "source": "https://github.com/cvpr-org/author-kit/archive/refs/heads/main.zip",
+  "sha256": "03ee2797c0e7dcc9e481053b452c2970b866f19b300958cffdd09ec0dbeba653",
+  "license": "See original upstream author kit; no SPDX license declared",
+  "note": "官方 author-kit 快照，审稿模式。paperID 必须替换为实际投稿编号。",
+  "retrievedAt": "2026-11-07",
+  "validation": "compiled-on-windows",
+  "testedAt": "2026-11-06T17:21:46.175Z"
+}

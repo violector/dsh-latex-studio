@@ -1,0 +1,25 @@
+{
+  "id": "lncs",
+  "name": "Springer LNCS · 会议论文",
+  "family": "lncs",
+  "category": "computer",
+  "aliases": [
+    "LNCS",
+    "ECCV",
+    "MICCAI",
+    "Springer conference",
+    "医学图像"
+  ],
+  "year": null,
+  "mode": "Authoring / review",
+  "engine": "pdflatex",
+  "directory": "lncs",
+  "main": "main.tex",
+  "source": "https://mirrors.mit.edu/CTAN/macros/latex/contrib/llncs.zip",
+  "sha256": "932940fb23574fbc8c61afe6094e2debe0955e1bc6f971f734f3cb4de5d1167a",
+  "license": "CC-BY-4.0-or-later",
+  "note": "LNCS 基础格式；ECCV、MICCAI 的年份专用审稿样式可能额外要求匿名设置。",
+  "retrievedAt": "2026-11-07",
+  "validation": "compiled-on-windows",
+  "testedAt": "2026-11-06T17:21:48.694Z"
+}

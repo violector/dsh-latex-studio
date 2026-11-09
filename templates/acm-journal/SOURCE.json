@@ -1,0 +1,27 @@
+{
+  "id": "acm-journal",
+  "name": "ACM 期刊 / 单栏审稿",
+  "family": "acm",
+  "category": "computer",
+  "aliases": [
+    "ACM journal",
+    "TOIS",
+    "TOG",
+    "TIST",
+    "TOSEM",
+    "CSUR",
+    "manuscript"
+  ],
+  "year": null,
+  "mode": "Authoring / review",
+  "engine": "pdflatex",
+  "directory": "acm-journal",
+  "main": "main.tex",
+  "source": "https://mirrors.mit.edu/CTAN/macros/latex/contrib/acmart.zip",
+  "sha256": "81977a834f5cfd5302c37181ede34d2663eeea60604d1d89230e3c5e74b9a4bb",
+  "license": "LPPL-1.3c",
+  "note": "ACM manuscript 审稿起稿；录用后需补充真实版权与出版元数据。",
+  "retrievedAt": "2026-11-07",
+  "validation": "compiled-on-windows",
+  "testedAt": "2026-11-06T17:21:27.279Z"
+}

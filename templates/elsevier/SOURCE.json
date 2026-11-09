@@ -1,0 +1,29 @@
+{
+  "id": "elsevier",
+  "name": "Elsevier · elsarticle",
+  "family": "elsevier",
+  "category": "multidisciplinary",
+  "aliases": [
+    "Elsevier",
+    "Pattern Recognition",
+    "Neurocomputing",
+    "Information Sciences",
+    "Artificial Intelligence",
+    "NeuroImage",
+    "Journal of Molecular Biology",
+    "Journal of Theoretical Biology",
+    "Computers in Biology and Medicine"
+  ],
+  "year": null,
+  "mode": "Authoring / review",
+  "engine": "pdflatex",
+  "directory": "elsevier",
+  "main": "main.tex",
+  "source": "https://mirrors.ctan.org/macros/latex/contrib/elsarticle.zip",
+  "sha256": "f25a3e1b006e0f86abb091a02f3afa7c6d60491665c7aa89f70cc5609e14d9dc",
+  "license": "LPPL-1.3",
+  "note": "采用 elsarticle 的期刊通用起稿；部分 Elsevier 期刊采用 CAS 或其他格式。",
+  "retrievedAt": "2026-11-07",
+  "validation": "compiled-on-windows",
+  "testedAt": "2026-11-06T17:21:51.477Z"
+}

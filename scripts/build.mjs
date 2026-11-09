@@ -1,0 +1,14 @@
+import { build } from 'esbuild';
+import { mkdir, writeFile, copyFile, readdir } from 'node:fs/promises';
+await mkdir('dist/assets', { recursive: true });
+await mkdir('dist/licenses', { recursive: true });
+await build({ entryPoints: ['src/host.mjs'], outfile: 'dist/host.js', bundle: true, platform: 'node', format: 'esm', target: 'node24', packages: 'external' });
+const client = await build({ entryPoints: ['src/client.jsx'], bundle: true, write: false, metafile: true, format: 'cjs', platform: 'browser', target: 'chrome136', external: ['react', 'react/jsx-runtime'], loader: { '.css': 'text' }, define: { 'process.env.NODE_ENV': '"production"' }, minify: true });
+await writeFile('dist/client.js', `window.__ModuleLoader__.load({id:"dsh-latex-studio",factory:(require)=>{var module={exports:{}};var exports=module.exports;${client.outputFiles[0].text}\nreturn module.exports;}});\n`);
+await copyFile('node_modules/pdfjs-dist/build/pdf.worker.min.mjs', 'dist/assets/pdf.worker.min.mjs');
+await copyFile('node_modules/mathlive/mathlive.min.js', 'dist/assets/mathlive.min.js');
+for (const file of await readdir('node_modules/mathlive/fonts')) if (file.endsWith('.woff2')) await copyFile('node_modules/mathlive/fonts/' + file, 'dist/assets/' + file);
+for (const [name, file] of [['mathlive', 'LICENSE.txt'], ['pdfjs-dist', 'LICENSE'], ['codemirror', 'LICENSE'], ['@codemirror/view', 'LICENSE'], ['@codemirror/state', 'LICENSE'], ['@codemirror/language', 'LICENSE'], ['@codemirror/legacy-modes', 'LICENSE'], ['zod', 'LICENSE']]) await copyFile(`node_modules/${name}/${file}`, `dist/licenses/${name.replaceAll('/', '-')}.txt`);
+const bundled = new Set(Object.keys(client.metafile.inputs).filter(p => p.startsWith('node_modules/')).map(p => { const parts = p.slice(13).split('/'); return parts[0].startsWith('@') ? parts.slice(0, 2).join('/') : parts[0]; }));
+for (const name of bundled) for (const file of await readdir(`node_modules/${name}`)) if (/^(LICENSE|COPYING|NOTICE)(\.|$)/i.test(file)) await copyFile(`node_modules/${name}/${file}`, `dist/licenses/${name.replaceAll('/', '-')}-${file}`);
+console.log('Built Host, native dsh Client and local rendering assets.');

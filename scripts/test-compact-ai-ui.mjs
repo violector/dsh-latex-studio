@@ -1,0 +1,44 @@
+import assert from 'node:assert/strict';
+import { chromium } from 'playwright';
+import { readFile, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
+
+const project = JSON.parse(await readFile('test-output/editor-project.json', 'utf8'));
+const browser = await chromium.connectOverCDP('http://127.0.0.1:9225');
+const page = browser.contexts()[0].pages().find(p => p.url().startsWith('dsh-app:'));
+page.setDefaultTimeout(15000);
+const errors = [];
+page.on('pageerror', error => errors.push(error.message));
+if (!(await page.locator('.ls-shell').count())) await page.getByRole('button', { name: 'LaTeX Studio', exact: true }).click();
+if (await page.locator('.ls-back').count()) await page.locator('.ls-back').click();
+await page.getByRole('combobox', { name: '打开已有文稿' }).selectOption(project.id);
+await page.locator('.ls-chat [contenteditable=true]').waitFor();
+const root = page.locator('.ls-root');
+const original = 'This paragraph can be copied, deleted, or revised with AI.';
+const replacement = 'The compact AI editor successfully revised this paragraph.';
+assert.equal(await readFile(join(project.directory, 'main.tex'), 'utf8'), project.source);
+await root.locator('.cm-line').filter({ hasText: original }).click({ clickCount: 3 });
+await page.getByRole('button', { name: '展开 AI 选区修改', exact: true }).click();
+assert.equal((await page.locator('.ls-selection-editor blockquote').innerText()).trim(), original);
+await page.getByRole('textbox', { name: '选区修改要求' }).fill(`这是 UI 集成验收。请仅将选区里的句子替换为：${replacement} 保留选区末尾已有的换行，不能改动其他字符。使用 replace_selection，实际编译并等待完成，最后只用一句中文报告。`);
+const startedAt = new Date().toISOString();
+await page.getByRole('button', { name: '交给 AI 修改', exact: true }).click();
+assert.equal(await root.locator('.cm-editor').count(), 1);
+console.log('Expanded compact selection request submitted to native dsh AI.');
+let after, report;
+for (let i = 0; i < 90; i++) {
+  after = await readFile(join(project.directory, 'main.tex'), 'utf8');
+  report = JSON.parse(await readFile(join(project.directory, '.build/report.json'), 'utf8'));
+  if (after.includes(replacement) && report.success && report.compiledAt > startedAt) break;
+  await new Promise(resolve => setTimeout(resolve, 1500));
+}
+assert.equal(after, project.source.replace(original, replacement));
+assert.ok(report.success && report.compiledAt > startedAt);
+await page.waitForFunction(text => document.querySelector('.cm-content')?.textContent.includes(text), replacement);
+await page.waitForFunction(() => document.querySelector('.ls-chat-header i')?.textContent === '写作对话');
+assert.equal(await page.locator('.ls-selection-editor').count(), 0);
+await page.locator('.ls-shell').screenshot({ path: 'test-output/compact-ai-result.png' });
+await writeFile('test-output/compact-ai-results.json', JSON.stringify({ testedAt: new Date().toISOString(), projectId: project.id, compactToExpandedToAi: true, exactSelectionReplacement: true, automaticSourceRefresh: true, compiledAt: report.compiledAt, success: report.success, errors }, null, 2));
+await browser.close();
+assert.deepEqual(errors, []);
+console.log('Real AI replaced only the selection, kept its newline, refreshed the source and compiled successfully.');

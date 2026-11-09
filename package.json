@@ -1,0 +1,109 @@
+{
+  "name": "dsh-latex-studio",
+  "version": "0.3.9",
+  "description": "AI-assisted LaTeX writing, scientific templates, managed compilation and PDF preview for DeepSeek Harness.",
+  "author": "violector",
+  "homepage": "https://github.com/violector/dsh-latex-studio#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/violector/dsh-latex-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/violector/dsh-latex-studio/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "latex",
+    "scientific-writing",
+    "pdf",
+    "bibtex"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./dist/host.js",
+    "./client": "./dist/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "dist",
+    "templates",
+    "locale",
+    "skills",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "marketplace"
+  ],
+  "engines": {
+    "dsh": ">=0.2.2-rc.1 <0.3.0",
+    "node": ">=24.9.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-api-session-controller"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:compile": "node scripts/test-compile.mjs",
+    "market:index": "node scripts/build-market-index.mjs",
+    "prepack": "npm run build"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.1.0",
+    "@deepseek-ai/dsh-tools": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-typert-protocol": "0.2.2-rc.1"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-typert-protocol": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@citation-js/core": "^0.7.21",
+    "@citation-js/plugin-bibtex": "^0.7.21",
+    "fflate": "^0.8.2",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@codemirror/language": "^6.11.0",
+    "@codemirror/legacy-modes": "^6.5.0",
+    "@codemirror/state": "^6.5.0",
+    "@codemirror/view": "^6.36.0",
+    "@deepseek-ai/cordis": "4.1.0",
+    "@deepseek-ai/dsh-plugin-market-index": "0.2.1-alpha.4",
+    "@deepseek-ai/dsh-tools": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-typert-protocol": "0.2.2-rc.1",
+    "@lezer/highlight": "^1.2.5",
+    "codemirror": "^6.0.1",
+    "esbuild": "^0.25.0",
+    "mathlive": "^0.111.0",
+    "pdfjs-dist": "^5.4.0",
+    "playwright": "^1.56.0"
+  }
+}

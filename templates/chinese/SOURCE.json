@@ -1,0 +1,23 @@
+{
+  "id": "chinese",
+  "name": "中文研究稿 · CTeX",
+  "family": "article",
+  "category": "general",
+  "aliases": [
+    "中文",
+    "ctex",
+    "Chinese"
+  ],
+  "year": null,
+  "mode": "Authoring / review",
+  "engine": "xelatex",
+  "directory": "chinese",
+  "main": "main.tex",
+  "source": "https://www.latex-project.org/",
+  "sha256": null,
+  "license": "MIT (starter)",
+  "note": "使用随 TeX Live 分发的 Fandol 字体，不依赖本机中文字体。",
+  "retrievedAt": "2026-11-07",
+  "validation": "compiled-on-windows",
+  "testedAt": "2026-11-06T17:21:05.441Z"
+}

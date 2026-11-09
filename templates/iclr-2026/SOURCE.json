@@ -1,0 +1,21 @@
+{
+  "id": "iclr-2026",
+  "name": "ICLR 2026 · 历史版本",
+  "family": "iclr",
+  "category": "computer",
+  "aliases": [
+    "ICLR 2026"
+  ],
+  "year": 2026,
+  "mode": "Authoring / review",
+  "engine": "pdflatex",
+  "directory": "iclr-2026",
+  "main": "main.tex",
+  "source": "https://github.com/ICLR/Master-Template/archive/refs/heads/master.zip",
+  "sha256": "8e9ab04f79f257dadc4ce1a7c6dfb731e6deb90ba1a6da48ce98eb80a65e4f05",
+  "license": "See original upstream author kit; no SPDX license declared",
+  "note": "保留用于已有项目；新投稿请选择对应年份。",
+  "retrievedAt": "2026-11-07",
+  "validation": "compiled-on-windows",
+  "testedAt": "2026-11-06T17:21:36.168Z"
+}

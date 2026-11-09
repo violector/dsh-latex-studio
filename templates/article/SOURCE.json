@@ -1,0 +1,25 @@
+{
+  "id": "article",
+  "name": "通用英文论文 / arXiv 起稿",
+  "family": "article",
+  "category": "general",
+  "aliases": [
+    "article",
+    "arxiv",
+    "preprint",
+    "英文",
+    "通用"
+  ],
+  "year": null,
+  "mode": "Authoring / review",
+  "engine": "pdflatex",
+  "directory": "article",
+  "main": "main.tex",
+  "source": "https://www.latex-project.org/",
+  "sha256": null,
+  "license": "MIT (starter); LaTeX packages retain their licenses",
+  "note": "通用草稿，不代表 arXiv 学科分类或目标期刊的专用格式。",
+  "retrievedAt": "2026-11-07",
+  "validation": "compiled-on-windows",
+  "testedAt": "2026-11-06T17:21:00.059Z"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "iclr-2027",
+  "name": "ICLR 2027",
+  "family": "iclr",
+  "category": "computer",
+  "aliases": [
+    "ICLR",
+    "representation learning",
+    "表示学习"
+  ],
+  "year": 2027,
+  "mode": "Authoring / review",
+  "engine": "pdflatex",
+  "directory": "iclr-2027",
+  "main": "main.tex",
+  "source": "https://github.com/ICLR/Master-Template/archive/refs/heads/master.zip",
+  "sha256": "8e9ab04f79f257dadc4ce1a7c6dfb731e6deb90ba1a6da48ce98eb80a65e4f05",
+  "license": "See original upstream author kit; no SPDX license declared",
+  "note": "官方仓库 ICLR 2027 样式，默认匿名审稿。",
+  "retrievedAt": "2026-11-07",
+  "validation": "compiled-on-windows",
+  "testedAt": "2026-11-06T17:21:33.304Z"
+}

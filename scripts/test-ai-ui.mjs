@@ -1,0 +1,13 @@
+import { chromium } from 'playwright';
+const browser = await chromium.connectOverCDP('http://127.0.0.1:9225');
+const page = browser.contexts()[0].pages().find(p => p.url().startsWith('dsh-app:'));
+await page.getByRole('button', { name: 'LaTeX Studio', exact: true }).click();
+if (await page.locator('.ls-back').count()) await page.locator('.ls-back').click();
+await page.getByRole('combobox', { name: '打开已有文稿' }).selectOption({ label: 'LaTeX Studio Desktop Validation' });
+await page.getByRole('button', { name: 'AI 助手', exact: true }).click();
+await page.getByLabel('描述你需要的帮助').fill('这是插件集成测试。仅处理当前提供的测试项目：先调用 latex_templates 搜索 Bioinformatics，报告本地匹配；然后用 latex_file 读取 main.tex，将摘要中的 Write your abstract here. 改成 This document validates the LaTeX Studio writing workflow. 保存时传入 baseHash；通过 latex_compile 编译，查询 job 直到完成。无需其他修改，无需调用 shell。最后用一句中文报告真实结果。');
+await page.getByRole('button', { name: '发送到左侧写作对话', exact: true }).click();
+await page.waitForSelector('.ls-chat [contenteditable=true]');
+await page.waitForSelector('.ls-root .cm-editor');
+console.log('AI request submitted through native dsh session API; conversation and editor remain visible');
+await browser.close();

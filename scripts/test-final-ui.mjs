@@ -1,0 +1,78 @@
+import assert from 'node:assert/strict';
+import { chromium } from 'playwright';
+import { readFile, writeFile, copyFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import { Studio } from '../src/core.mjs';
+
+const project = JSON.parse(await readFile('test-output/feature-project.json', 'utf8'));
+const { version } = JSON.parse(await readFile('package.json', 'utf8'));
+const studio = new Studio();
+const before = await studio.execute({ action: 'read', projectId: project.id, path: 'main.tex' });
+assert.ok(before.content.includes('This discussion was written from the persistent dsh conversation.'));
+const source = project.source.replace('This sentence should be revised.', 'This paragraph was revised through the embedded dsh assistant.').replace('This draft needs a discussion.', 'This discussion was written from the persistent dsh conversation.');
+await studio.execute({ action: 'write', projectId: project.id, path: 'main.tex', content: source, baseHash: before.hash });
+const browser = await chromium.connectOverCDP('http://127.0.0.1:9225');
+const page = browser.contexts()[0].pages().find(p => p.url().startsWith('dsh-app:'));
+page.setDefaultTimeout(15000);
+const errors = [];
+page.on('pageerror', error => errors.push(error.message));
+if (!(await page.locator('.ls-shell').count())) await page.getByRole('button', { name: 'LaTeX Studio', exact: true }).click();
+if (await page.locator('.ls-back').count()) await page.locator('.ls-back').click();
+await page.getByRole('combobox', { name: '打开已有文稿' }).selectOption(project.id);
+const root = page.locator('.ls-root');
+await page.waitForSelector('.ls-chat [contenteditable=true]');
+await root.locator('.cm-editor').waitFor();
+await root.locator('.cm-content').click();
+await page.keyboard.press('Control+Home');
+for (let i = 0; i < 6; i++) await page.keyboard.press('ArrowDown');
+await page.keyboard.press('Home');
+await page.keyboard.press('Shift+End');
+await page.getByRole('button', { name: '展开 AI 选区修改', exact: true }).click();
+await page.getByRole('dialog', { name: '修改选中文字', exact: true }).waitFor();
+assert.equal((await page.locator('.ls-selection-editor blockquote').innerText()).trim(), 'This paragraph was revised through the embedded dsh assistant.');
+await page.getByRole('textbox', { name: '选区修改要求' }).fill('请润色为简洁的学术英语，并保留原意。');
+await page.locator('.ls-shell').screenshot({ path: 'test-output/selection-ai-popup.png' });
+await page.getByRole('button', { name: '关闭选区修改' }).click();
+await root.locator('.cm-content').click();
+await page.keyboard.press('Control+End');
+await page.locator('.ls-selection-editor').waitFor({ state: 'detached' });
+for (const name of ['layout-example.png', 'photo.jpg', 'vector.pdf']) {
+  await root.getByRole('button', { name: '图片', exact: true }).click();
+  await page.getByRole('combobox', { name: '图片文件' }).selectOption(`figures/results/${name}`);
+  await page.getByRole('spinbutton', { name: '宽度（相对于当前栏）' }).fill('0.3');
+  await page.getByRole('textbox', { name: '图表标题' }).fill(`Embedded ${name}`);
+  await page.getByRole('button', { name: '插入到光标位置' }).click();
+  await page.locator('.ls-selection-editor').waitFor({ state: 'detached' });
+}
+const startedAt = new Date().toISOString();
+await root.getByRole('button', { name: '编译 PDF', exact: true }).click();
+let report;
+for (let i = 0; i < 90; i++) {
+  report = JSON.parse(await readFile(join(project.directory, '.build/report.json'), 'utf8'));
+  if (report.compiledAt > startedAt) break;
+  await new Promise(resolve => setTimeout(resolve, 1000));
+}
+assert.ok(report.compiledAt > startedAt && report.success, report.log.slice(-1500));
+assert.equal(report.diagnostics.some(d => /multiply.defined/i.test(d.message)), false);
+const finalSource = await readFile(join(project.directory, 'main.tex'), 'utf8');
+assert.deepEqual([...finalSource.matchAll(/\\label\{(fig:[^}]+)\}/g)].map(match => match[1]), ['fig:result', 'fig:result-2', 'fig:result-3']);
+assert.equal(await page.locator('.ls-selection-editor').count(), 0);
+await root.getByRole('combobox', { name: '工作区视图' }).selectOption('pdf');
+await root.locator('.ls-preview-column .ls-pdf-pages canvas').first().waitFor();
+await page.waitForFunction(() => {
+  const canvas = document.querySelector('.ls-preview-column .ls-pdf-pages canvas');
+  if (!canvas?.width) return false;
+  const data = canvas.getContext('2d').getImageData(0, 0, canvas.width, canvas.height).data;
+  for (let i = 0; i < data.length; i += 40) if (data[i + 3] === 255 && data[i] < 180) return true;
+  return false;
+});
+await page.locator('.ls-shell').screenshot({ path: 'test-output/all-image-formats-pdf.png' });
+await page.locator('.ls-preview-column .ls-pdf-pages canvas').first().screenshot({ path: 'test-output/images-pdf-page-1.png' });
+await page.locator('.ls-preview-column .ls-pdf-pages canvas').nth(1).screenshot({ path: 'test-output/images-pdf-page-2.png' });
+await root.getByRole('combobox', { name: '工作区视图' }).selectOption('split');
+await page.locator('.ls-shell').screenshot({ path: 'test-output/native-chat-writing.png' });
+await copyFile(report.pdf, 'test-output/all-image-formats.pdf');
+await writeFile('test-output/final-ui-results.json', JSON.stringify({ testedAt: new Date().toISOString(), version, residentChatRestored: true, selectionPopup: true, noEmptyPopup: true, uniqueFigureLabels: true, formatsCompiled: ['png', 'jpg', 'pdf'], pdfPages: 2, diagnostics: report.diagnostics, errors }, null, 2));
+await browser.close();
+assert.deepEqual(errors, []);
+console.log(`Packaged v${version} UI: native chat, selection popup, three graphics formats, unique labels and rendered PDF passed.`);

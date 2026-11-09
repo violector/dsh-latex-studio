@@ -1,0 +1,22 @@
+{
+  "id": "icml-2026",
+  "name": "ICML 2026",
+  "family": "icml",
+  "category": "computer",
+  "aliases": [
+    "ICML",
+    "机器学习国际会议"
+  ],
+  "year": 2026,
+  "mode": "Authoring / review",
+  "engine": "pdflatex",
+  "directory": "icml-2026",
+  "main": "main.tex",
+  "source": "https://media.icml.cc/Conferences/ICML2026/Styles/icml2026.zip",
+  "sha256": "8b29290f5828e176debb57ea9cc00252502973d55ea561a2f18a7f0a326bfc6c",
+  "license": "See original upstream author kit; no SPDX license declared",
+  "note": "默认匿名审稿；录用稿按官方要求切换 accepted 选项。",
+  "retrievedAt": "2026-11-07",
+  "validation": "compiled-on-windows",
+  "testedAt": "2026-11-06T17:21:39.609Z"
+}

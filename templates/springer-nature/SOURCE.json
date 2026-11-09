@@ -1,0 +1,25 @@
+{
+  "id": "springer-nature",
+  "name": "Springer Nature · 综合期刊",
+  "family": "springer",
+  "category": "biology",
+  "aliases": [
+    "Springer",
+    "Nature",
+    "Nature Communications",
+    "Scientific Reports",
+    "Scientific Data"
+  ],
+  "year": null,
+  "mode": "Authoring / review",
+  "engine": "pdflatex",
+  "directory": "springer-nature",
+  "main": "main.tex",
+  "source": "https://cms-resources.apps.public.k8s.springernature.io/springer-cms/rest/v1/content/18782940/data/v12",
+  "sha256": "812e76dcaa9c28dc1bff1fb6065d51729b67d4ea140552a05088317414a3ecae",
+  "license": "See original upstream author kit; no SPDX license declared",
+  "note": "Springer Nature 官方 content-first 作者模板；这是投稿稿件格式，并非期刊出版排版。遵守目标刊物单独的结构与声明要求。",
+  "retrievedAt": "2026-11-07",
+  "validation": "compiled-on-windows",
+  "testedAt": "2026-11-06T17:21:56.638Z"
+}

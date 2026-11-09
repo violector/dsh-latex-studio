@@ -1,0 +1,242 @@
+[
+  {
+    "id": "article",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": null,
+    "starterSha256": "c217c6ed4fdad472d147936eefc1a01c7e28c60eca86a24cad2eae641d5892e4",
+    "testedAt": "2026-11-06T17:21:00.059Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "chinese",
+    "success": true,
+    "engine": "xelatex",
+    "upstreamSha256": null,
+    "starterSha256": "48aab4c4b861e931314ac96e59a06f7490975e36fedd975a6f3f1d2cc8f8f73c",
+    "testedAt": "2026-11-06T17:21:05.441Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "ieee-conference",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "e0cd4f5afbd42c8076092280e72b3e0a5111efe501d35de9f715cfb8da313cb4",
+    "starterSha256": "06c7895884433bcf4a057d901767fbd4c863d5e7422e66a33cf4e1ae5a15b717",
+    "testedAt": "2026-11-06T17:21:08.535Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "ieee-journal",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "e0cd4f5afbd42c8076092280e72b3e0a5111efe501d35de9f715cfb8da313cb4",
+    "starterSha256": "9bb1a761d6168b82e29ce8a7fe2c79689e5ea3d6a96df3191795cf9c3192c334",
+    "testedAt": "2026-11-06T17:21:11.512Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "acm-conference",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "81977a834f5cfd5302c37181ede34d2663eeea60604d1d89230e3c5e74b9a4bb",
+    "starterSha256": "e5fefa232b2eadad0dfff38cadb1659f098dde365b191b02c1ae8fdd066ee56b",
+    "testedAt": "2026-11-06T17:21:19.147Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "acm-journal",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "81977a834f5cfd5302c37181ede34d2663eeea60604d1d89230e3c5e74b9a4bb",
+    "starterSha256": "3136ae1aa0d6ed2538f69e0f971ae2322f58af750b4b6f5907e5d8d98f733c56",
+    "testedAt": "2026-11-06T17:21:27.279Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "neurips-2026",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "82473931e3ef710fcd3f4a8cd4119b9de32e56825f90f9e5a6d55f2d01b817d9",
+    "starterSha256": "eb1bdfbf8abedb9447c73fae8f361ced114db2b9fef023a32dca191f7d71daea",
+    "testedAt": "2026-11-06T17:21:30.423Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "iclr-2027",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "8e9ab04f79f257dadc4ce1a7c6dfb731e6deb90ba1a6da48ce98eb80a65e4f05",
+    "starterSha256": "b9212d4337ee83ef82cc63ebab4e3efe938edaaf58b1b810cd9ea576b890cf61",
+    "testedAt": "2026-11-06T17:21:33.304Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "iclr-2026",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "8e9ab04f79f257dadc4ce1a7c6dfb731e6deb90ba1a6da48ce98eb80a65e4f05",
+    "starterSha256": "192c371fc1771f27a01a68ba032357b9de50484b7b9909328499b8188092b0e5",
+    "testedAt": "2026-11-06T17:21:36.168Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "icml-2026",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "8b29290f5828e176debb57ea9cc00252502973d55ea561a2f18a7f0a326bfc6c",
+    "starterSha256": "2c7bb3d54d5bcf139b1d7ffc69b1fdefeea490223ca801b9c3e45455cd56f210",
+    "testedAt": "2026-11-06T17:21:39.609Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "acl",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "bead1eec1aa2c4de8596ddcdd5ac22917f38b2c8441b853ff13015c0b0b8b92e",
+    "starterSha256": "4fa91fcc507ec73e614a04ae7aef85a6ff4be148bf9dc29d4ce77b3866ffe73d",
+    "testedAt": "2026-11-06T17:25:39.630Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "cvpr",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "03ee2797c0e7dcc9e481053b452c2970b866f19b300958cffdd09ec0dbeba653",
+    "starterSha256": "a26a02beb9423b2814cedd379b2da46780b90c919bca930b7b32055951be37e8",
+    "testedAt": "2026-11-06T17:21:46.175Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "lncs",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "932940fb23574fbc8c61afe6094e2debe0955e1bc6f971f734f3cb4de5d1167a",
+    "starterSha256": "601572e04c19519a9609498dfae942b5366f083782ff8783b8bb43299d0e463a",
+    "testedAt": "2026-11-06T17:21:48.694Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "elsevier",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "f25a3e1b006e0f86abb091a02f3afa7c6d60491665c7aa89f70cc5609e14d9dc",
+    "starterSha256": "2df8734c6c323002361aa5e1f2519ad62976756be84d037f74bbf899b49dd7b3",
+    "testedAt": "2026-11-06T17:21:51.477Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "springer-nature",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "812e76dcaa9c28dc1bff1fb6065d51729b67d4ea140552a05088317414a3ecae",
+    "starterSha256": "de8c3243bb536d2690d0981a248d67def5ea493eac7cfe35277b534f8571596b",
+    "testedAt": "2026-11-06T17:21:56.638Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "bmc",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "812e76dcaa9c28dc1bff1fb6065d51729b67d4ea140552a05088317414a3ecae",
+    "starterSha256": "de8c3243bb536d2690d0981a248d67def5ea493eac7cfe35277b534f8571596b",
+    "testedAt": "2026-11-06T17:22:01.450Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "nature-methods",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "812e76dcaa9c28dc1bff1fb6065d51729b67d4ea140552a05088317414a3ecae",
+    "starterSha256": "de8c3243bb536d2690d0981a248d67def5ea493eac7cfe35277b534f8571596b",
+    "testedAt": "2026-11-06T17:22:06.206Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "plos-one",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "ea3a8a0fdbac77f95de47639541b09ef1583e059ace6783367490af9fa0b9a60",
+    "starterSha256": "0a41dd39c9f45f3f833e97681f01aa6700e4ff51c71a162edfdd035f79603156",
+    "testedAt": "2026-11-06T17:25:44.220Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "plos-biology",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "ea3a8a0fdbac77f95de47639541b09ef1583e059ace6783367490af9fa0b9a60",
+    "starterSha256": "0a41dd39c9f45f3f833e97681f01aa6700e4ff51c71a162edfdd035f79603156",
+    "testedAt": "2026-11-06T17:25:48.900Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "plos-computational-biology",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "ea3a8a0fdbac77f95de47639541b09ef1583e059ace6783367490af9fa0b9a60",
+    "starterSha256": "0a41dd39c9f45f3f833e97681f01aa6700e4ff51c71a162edfdd035f79603156",
+    "testedAt": "2026-11-06T17:25:53.815Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "bioinformatics",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "025434f53ed3a46b9fd84d50a78c734c309476bc47b1cb7a90c383734df38e97",
+    "starterSha256": "e550e2f57b5f16bf4a3ebfb6c4275bf56035bfc4f65f3f99eae7898db5628d80",
+    "testedAt": "2026-11-06T17:22:24.160Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "bioinformatics-advances",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "025434f53ed3a46b9fd84d50a78c734c309476bc47b1cb7a90c383734df38e97",
+    "starterSha256": "2fdc7e8c595c5f2d4265108c7c191e52c5c98036a157f79ad9e5e50da1ad1e7e",
+    "testedAt": "2026-11-06T17:22:35.647Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "nar-genomics",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "025434f53ed3a46b9fd84d50a78c734c309476bc47b1cb7a90c383734df38e97",
+    "starterSha256": "91097d47435edebe871a617d622011256d82090c5af0d5cb7324db669e7aca6a",
+    "testedAt": "2026-11-06T17:22:48.314Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  },
+  {
+    "id": "oup-biology",
+    "success": true,
+    "engine": "pdflatex",
+    "upstreamSha256": "025434f53ed3a46b9fd84d50a78c734c309476bc47b1cb7a90c383734df38e97",
+    "starterSha256": "ad4e16dab82644270b6126321d3768f1d842a8d3b8c82d64f19b0c13a86d25b5",
+    "testedAt": "2026-11-06T17:22:59.954Z",
+    "runtime": "TinyTeX v2026.11 / TeX Live 2026",
+    "platform": "win32"
+  }
+]

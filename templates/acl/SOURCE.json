@@ -1,0 +1,26 @@
+{
+  "id": "acl",
+  "name": "ACL / EMNLP / NAACL",
+  "family": "acl",
+  "category": "computer",
+  "aliases": [
+    "ACL",
+    "EMNLP",
+    "NAACL",
+    "EACL",
+    "COLING",
+    "自然语言处理"
+  ],
+  "year": null,
+  "mode": "Authoring / review",
+  "engine": "pdflatex",
+  "directory": "acl",
+  "main": "main.tex",
+  "source": "https://github.com/acl-org/acl-style-files/archive/refs/heads/master.zip",
+  "sha256": "bead1eec1aa2c4de8596ddcdd5ac22917f38b2c8441b853ff13015c0b0b8b92e",
+  "license": "See original upstream author kit; no SPDX license declared",
+  "note": "ACL 官方公共样式快照；不同会议的页数与 mandatory limitations 要求需核对。",
+  "retrievedAt": "2026-11-07",
+  "validation": "compiled-on-windows",
+  "testedAt": "2026-11-06T17:25:39.630Z"
+}

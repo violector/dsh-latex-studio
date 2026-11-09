@@ -1,0 +1,28 @@
+{
+  "id": "acm-conference",
+  "name": "ACM 会议 · SIGCONF",
+  "family": "acm",
+  "category": "computer",
+  "aliases": [
+    "ACM",
+    "SIGCONF",
+    "KDD",
+    "SIGIR",
+    "WWW",
+    "CIKM",
+    "WSDM",
+    "SIGMOD"
+  ],
+  "year": null,
+  "mode": "Authoring / review",
+  "engine": "pdflatex",
+  "directory": "acm-conference",
+  "main": "main.tex",
+  "source": "https://mirrors.mit.edu/CTAN/macros/latex/contrib/acmart.zip",
+  "sha256": "81977a834f5cfd5302c37181ede34d2663eeea60604d1d89230e3c5e74b9a4bb",
+  "license": "LPPL-1.3c",
+  "note": "匿名审稿双栏起稿；部分 ACM 会议要求单栏 manuscript，按该会议指南选择。",
+  "retrievedAt": "2026-11-07",
+  "validation": "compiled-on-windows",
+  "testedAt": "2026-11-06T17:21:19.147Z"
+}
