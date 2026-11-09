@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "title": {
+    "en": "LaTeX Studio",
+    "zh": "LaTeX Studio 论文写作"
+  },
+  "description": {
+    "en": "Releases from the LaTeX Studio project.",
+    "zh": "LaTeX Studio 项目发布的插件版本。"
+  },
+  "metadata": {
+    "categories": {
+      "docs": {
+        "title": {
+          "en": "Scientific writing",
+          "zh": "科研写作"
+        }
+      }
+    },
+    "labels": {
+      "windows": {
+        "title": {
+          "en": "Windows desktop",
+          "zh": "Windows 桌面版"
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-latex-studio",
+      "title": "LaTeX Studio",
+      "description": {
+        "en": "AI LaTeX writing, 24 template presets, managed compilation, PDF preview and BibTeX validation for Windows desktop.",
+        "zh": "Windows 桌面版 AI LaTeX 写作，24 个模板入口、受管编译、PDF 预览与 BibTeX 校验。"
+      },
+      "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTUiIGZpbGw9IiMyNTY0NWMiLz48cGF0aCBkPSJNMTggMTNoMjFsOSA5djI5SDE4eiIgZmlsbD0iI2Y0ZjBlNyIvPjxwYXRoIGQ9Ik0zOSAxM3YxMGg5IiBmaWxsPSIjYzJkY2QwIi8+PHBhdGggZD0iTTI2IDMwaDE0TTI2IDQwaDE0TTMyIDMwdjE1IiBmaWxsPSJub25lIiBzdHJva2U9IiMyNTY0NWMiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+Cg==",
+      "author": "violector",
+      "homepage": "https://github.com/violector/dsh-latex-studio#readme",
+      "repository": {
+        "url": "https://github.com/violector/dsh-latex-studio"
+      },
+      "keywords": [
+        "dsh-plugin",
+        "deepseek-harness",
+        "latex",
+        "scientific-writing",
+        "pdf",
+        "bibtex"
+      ],
+      "metadata": {
+        "category": "docs",
+        "labels": [
+          "windows"
+        ]
+      },
+      "versions": [
+        {
+          "version": "0.3.9",
+          "publishTimestamp": 1794187046,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/violector/dsh-latex-studio",
+            "commit": "f1bfe3d714efcc72c6506ef6ef46c4a6b2afa701"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.1 <0.3.0"
+          }
+        }
+      ]
+    }
+  ]
+}
