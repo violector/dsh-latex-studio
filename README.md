@@ -2,20 +2,20 @@
 
 本机 dsh 桌面版的 LaTeX 写作插件。内置 24 个模板入口，提供源码编辑、公式输入、图表与算法插入、独立编译环境、PDF 预览和 dsh AI 工具。
 
-当前版本：0.3.9 Preview。面向 **Windows 本机 dsh 桌面版**，已在 dsh Desktop 0.2.2-rc.1 验证；macOS / Linux 的受管编译器尚未实现。
+当前版本：0.3.10 Preview。面向 **Windows 本机 dsh 桌面版**，已在 dsh Desktop 0.2.2-rc.1 验证；macOS / Linux 的受管编译器尚未实现。
 
 ## 本机安装与使用
 
 在 **dsh 桌面版附带的终端 / CLI** 中从 GitHub 安装固定版本：
 
 ```powershell
-dsh plugin --profile desktop add 'git+https://github.com/violector/dsh-latex-studio.git#v0.3.9'
+dsh plugin --profile desktop add 'git+https://github.com/violector/dsh-latex-studio.git#v0.3.10'
 ```
 
 也可以从 [GitHub Releases](https://github.com/violector/dsh-latex-studio/releases) 下载 `.tgz`，在下载目录安装：
 
 ```powershell
-dsh plugin --profile desktop add ./dsh-latex-studio-0.3.9.tgz
+dsh plugin --profile desktop add ./dsh-latex-studio-0.3.10.tgz
 ```
 
 安装后重新启动 dsh，在左侧打开 **LaTeX Studio**。
