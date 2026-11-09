@@ -56,12 +56,12 @@
       },
       "versions": [
         {
-          "version": "0.3.9",
-          "publishTimestamp": 1794187046,
+          "version": "0.3.10",
+          "publishTimestamp": 1794187631,
           "source": {
             "type": "git",
             "url": "https://github.com/violector/dsh-latex-studio",
-            "commit": "f1bfe3d714efcc72c6506ef6ef46c4a6b2afa701"
+            "commit": "ccb6adfa2af3e3d58a33e3545e1f5fdb9aef24fd"
           },
           "engines": {
             "dsh": ">=0.2.2-rc.1 <0.3.0"
