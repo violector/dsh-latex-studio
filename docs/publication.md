@@ -25,6 +25,8 @@ https://raw.githubusercontent.com/violector/dsh-latex-studio/main/marketplace/in
 
 ## 社区精选目录
 
-收录草稿：<https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/13424>。该 PR 仅新增 `data/plugins/violector__dsh-latex-studio.yml`，分类为 `docs`。
+收录 PR：<https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/13424>。该 PR 仅新增 `data/plugins/violector__dsh-latex-studio.yml`，分类为 `docs`。
 
-本机 `dshmarket` 使用该精选目录。按目录在 2026-11-09 的贡献规则，仓库需创建满一天，之后仍需维护者人工审核。本仓库创建于 2026-11-09 09:13:05（北京时间），于 **2026-11-10 09:13:05** 达到一天要求。因此 PR 保持草稿，当前不能宣称已在该精选市场上架。项目公开仓库、Release 和自定义索引独立可用。
+本机 `dshmarket` 使用该精选目录。按目录在 2026-11-09 的贡献规则，仓库需创建满一天，之后仍需维护者人工审核。本仓库创建于 2026-11-09 09:13:05（北京时间），于 **2026-11-10 09:13:05** 达到一天要求。
+
+2026-11-10 15:33:59（北京时间）已核实仓库满一天，更新 PR 说明并从草稿切换为 **Ready for review**。当前等待社区维护者评审，尚未宣称已在精选市场上架。项目公开仓库、Release 和自定义索引独立可用。
