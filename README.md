@@ -4,6 +4,10 @@
 
 当前版本：0.3.10 Preview。面向 **Windows 本机 dsh 桌面版**，已在 dsh Desktop 0.2.2-rc.1 验证；macOS / Linux 的受管编译器尚未实现。
 
+![LaTeX Studio 功能演示：模板选择、正文编辑、选句 AI 修改和 PDF 编译](https://raw.githubusercontent.com/violector/dsh-latex-studio/main/docs/media/latex-studio-demo.gif)
+
+*真实桌面操作演示：选择投稿模板，选中句子向 AI 提要求，改写正文并编译 PDF。使用示例文稿，等待过程已剪辑。*
+
 ## 本机安装与使用
 
 在 **dsh 桌面版附带的终端 / CLI** 中从 GitHub 安装固定版本：
